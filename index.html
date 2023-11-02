@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NAGLE Search by Jiwon Choi</title>
+  </head>
+  <body>
+    <script>
+      function redirect(query) {
+        if (/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$/.test(query)) {
+          window.location.href = `https://search.naver.com/search.naver?ie=UTF-8&query=${query}`;
+          
+        } else {
+          window.location.href = `https://www.google.com/search?q=${query}`;
+        }
+      }
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const query = urlParams.get('query');
+      redirect(query);
+    </script>
+  </body>
+</html>
