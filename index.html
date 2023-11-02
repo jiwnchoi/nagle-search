@@ -7,11 +7,10 @@
   <body>
     <script>
       function redirect(query) {
-        if (/^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$/.test(query)) {
-          window.location.href = `https://search.naver.com/search.naver?ie=UTF-8&query=${query}`;
-          
-        } else {
+       if (/^[a-zA-Z]*$/.test(query)) {
           window.location.href = `https://www.google.com/search?q=${query}`;
+        } else {
+          window.location.href = `https://search.naver.com/search.naver?ie=UTF-8&query=${query}`;
         }
       }
       const queryString = window.location.search;
