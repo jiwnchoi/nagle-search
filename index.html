@@ -7,7 +7,7 @@
   <body>
     <script>
       function redirect(query) {
-       if (/^[a-zA-Z]*$/.test(query)) {
+       if (/^[a-zA-Z\s]*$/.test(query)) {
           window.location.href = `https://www.google.com/search?q=${query}`;
         } else {
           window.location.href = `https://search.naver.com/search.naver?ie=UTF-8&query=${query}`;
